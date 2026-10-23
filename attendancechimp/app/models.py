@@ -147,7 +147,7 @@ class QRCodeUpload(models.Model):
         blank=True
     )
 
-    image_file = models.CharField(max_length=255)
+    image_file = models.ImageField(upload_to="qr_uploads/")
 
     upload_time = models.DateTimeField(auto_now_add=True)
 
