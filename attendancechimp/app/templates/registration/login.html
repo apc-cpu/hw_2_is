@@ -2,6 +2,12 @@
 <html><head><title>Login</title></head>
 <body style="text-align:center; font-family:Arial;">
 <h1>Log In</h1>
-
+<form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="hidden" name="next" value="{{ next|default:'/app/' }}">
+    <button type="submit">Log In</button>
+</form>
+  
 </body>
 </html>
