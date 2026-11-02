@@ -33,7 +33,7 @@ CDT = zoneinfo.ZoneInfo("America/Chicago")
 def index(request):
     """Render the home page (index.html)."""
 
-    context = {current_time': datetime.now(CDT).strftime('%H:%M'),
+    context = {'current_time': datetime.now(CDT).strftime('%H:%M'),
                'user': request.user}
     return render(request, 'app/index.html', context)
 
